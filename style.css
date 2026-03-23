@@ -1,0 +1,345 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+body {
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+/* เพิ่มการจัดการ Layout ด้วย Flexbox */
+#headerInner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+}
+
+#logo img {
+  max-width: 100%;
+  height: auto;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li {
+  display: inline;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #a17c5e;; /* สีเมื่อเมาส์ชี้ */
+}
+
+.button {
+  background-color: #dcb12f;
+  color: white;
+  padding: 8px 20px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+#mainPhoto {
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 300px;
+  color: #fff;
+  font-size: 3em;
+  font-weight: normal;
+  text-shadow: 1px 1px 5px #333;
+  padding: 100px 15%;
+}
+
+#contents {
+  width: 1200px;
+  margin: 50px auto 100px;
+  display: flex;
+  gap: 50px;
+}
+
+#menu {
+  width: 70%; /* ให้ส่วนเมนูใช้พื้นที่ 70% */
+}
+
+#menu h2 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+#menu ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0;
+  gap: 20px;
+}
+
+#menu li {
+  width: 30%; /* ให้รายการเมนูแต่ละอันมีความกว้าง 30% */
+  text-align: center;
+  position: relative;
+  transition: transform 0.3s ease-in-out;
+}
+
+#menu li a {
+  text-decoration: none; /* ป้องกันการแสดงเส้นขีดล่าง */
+}
+
+#menu img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+#menu figcaption {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+#menu a:hover img {
+  opacity: 0.8;
+  transform: scale(1.05);
+}
+
+#menu .new::before {
+  content: "NEW";
+  color: #fff;
+  background-color: #B01717;
+  display: block;
+  padding: 10px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 5px;
+  z-index: 1;
+  font-size: 14px;
+}
+
+#menu li:hover {
+  transform: scale(1.05);
+}
+
+/* ปรับขนาดเมื่อดูบนหน้าจอเล็ก */
+@media screen and (max-width: 768px) {
+  #menu li {
+    width: 45%; /* ให้ขนาดของเมนูเปลี่ยนเป็น 45% บนหน้าจอเล็ก */
+  }
+}
+
+#info {
+  width: 28%; /* ให้พื้นที่ของข้อมูลครอบคลุม 28% */
+  background-color: #f8f3f0;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#info h2 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+#info ul {
+  list-style: none;
+  padding: 0;
+}
+
+#info li {
+  margin-bottom: 10px;
+  border-bottom: 1px dashed #d0baa8;
+  padding-bottom: 10px;
+}
+
+#info li span {
+  font-weight: bold;
+  color: #5a412d;
+}
+
+#info li p {
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+/* ปรับการแสดงผลสำหรับหน้าจอเล็ก */
+@media screen and (max-width: 768px) {
+  #info {
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+
+
+#info {
+  background-color: #f8f3f0;
+  width: 100%;
+  max-width: 340px; /* จำกัดขนาดของกล่อง */
+  padding: 30px;
+  border-radius: 10px; /* เพิ่มการโค้งมุม */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* เพิ่มเงาให้กล่อง */
+  margin: 20px auto; /* จัดตำแหน่งให้อยู่ตรงกลาง */
+}
+
+#info ul {
+  margin-top: 20px;
+  padding: 0;
+  list-style: none;
+}
+
+#info li {
+  margin-bottom: 10px;
+  line-height: 1.5;
+  border-bottom: 1px dashed #d0baa8;
+  padding-bottom: 10px;
+}
+
+#info li:last-child {
+  border-bottom: none; /* ลบเส้นขีดล่างสำหรับรายการสุดท้าย */
+}
+
+#info span {
+  color: #5a412d;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+  #info {
+    padding: 20px; /* ลดขนาด padding ในหน้าจอเล็ก */
+  }
+}
+
+
+
+footer {
+  background-color: #5a412d;
+  padding: 20px 0;
+  color: white;
+}
+
+footer p {
+  text-align: center;
+  font-size: 14px;
+  margin: 0;
+}
+
+footer a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #FF6347; /* สีเมื่อเมาส์ชี้ */
+}
+
+#footerInner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0 20px;
+}
+
+#footerInner ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+#footerInner li {
+  margin-left: 20px;
+  background-image: url('images/arrow.jpg');
+  background-repeat: no-repeat;
+  background-position: center left;
+  padding-left: 20px;
+  display: flex;
+  align-items: center;
+}
+
+/* ปรับให้เหมาะสมกับอุปกรณ์ขนาดเล็ก */
+@media screen and (max-width: 768px) {
+  #footerInner {
+    flex-direction: column;
+    align-items: flex-start;
+  } 
+
+
+  #footerInner ul {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 10px;
+  }
+
+  #footerInner li {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  footer p {
+    margin-top: 10px;
+  }
+}
+
+.carousel-image-1{
+  background-image:url('images/pic14.jpg') ;
+  background-size: cover;
+}
+
+.carousel-image-2{
+  background-image:url('images/pic13.jpg') ;
+  background-size: cover;
+}
+
+.carousel-image-3{
+  background-image:url('images/pic10.jpg') ;
+  background-size: cover;
+}
+
+.carousel-caption h1{
+  color: white;
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.carousel-item{
+  height: 500px;   /* ปรับความสูงตามชอบ */
+}
